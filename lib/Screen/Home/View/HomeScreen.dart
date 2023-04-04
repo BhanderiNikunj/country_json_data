@@ -33,6 +33,15 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+          elevation: 0,
+          title: Text(
+            "Country List",
+            style: TextStyle(color: Colors.black, fontSize: 25),
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.white,
+        ),
         body: ListView.builder(
           itemCount: homeScreenProviderfalse!.CountryList.length,
           itemBuilder: (context, index) {
