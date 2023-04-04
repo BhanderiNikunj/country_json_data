@@ -38,21 +38,60 @@ class _HomeScreenState extends State<HomeScreen> {
           itemBuilder: (context, index) {
             return InkWell(
               onTap: () {
-                Navigator.pushNamed(context, 'detail',arguments: index);
+                Navigator.pushNamed(context, 'detail', arguments: index);
               },
-              child: ListTile(
-                contentPadding: EdgeInsets.all(15),
-                leading: Image.network(
-                  "${homeScreenProviderfalse!.CountryList[index].f1!.png}",
-                  height: 50,
-                  width: 50,
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 350,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.black38,
+                    borderRadius: BorderRadius.circular(15),
+                    border: Border.all(color: Colors.black),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Container(
+                        height: 250,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                          border: Border.all(color: Colors.black),
+                          color: Colors.white,
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(15),
+                          child: Image.network(
+                            "${homeScreenProviderfalse!.CountryList[index].f1!.png}",
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: Text(
+                          "${homeScreenProviderfalse!.CountryList[index].n1!.official}",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                          ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: Text(
+                          "${homeScreenProviderfalse!.CountryList[index].status}",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 25,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-                subtitle: Text(
-                    "${homeScreenProviderfalse!.CountryList[index].status}"),
-                trailing: Text(
-                    "${homeScreenProviderfalse!.CountryList[index].timezones![0]}"),
-                title: Text(
-                    "${homeScreenProviderfalse!.CountryList[index].n1!.common}"),
               ),
             );
           },

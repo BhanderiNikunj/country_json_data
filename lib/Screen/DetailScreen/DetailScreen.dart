@@ -24,6 +24,7 @@ class _DetailScreenState extends State<DetailScreen> {
     return SafeArea(
       child: Scaffold(
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
               height: 250,
@@ -37,63 +38,125 @@ class _DetailScreenState extends State<DetailScreen> {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 80,top: 20),
+              padding: const EdgeInsets.only(left: 20,top: 15),
+              child: Text(
+                "${homeScreenProviderfalse!.CountryList[index].n1!.official}",
+                style: TextStyle(
+                  fontSize: 25,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20,top: 5),
+              child: Text(
+                "${homeScreenProviderfalse!.CountryList[index].n1!.common} City",
+                style: TextStyle(
+                  fontSize: 25,
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            Padding(
+              padding: EdgeInsets.only(left: 20,top: 5),
               child: Row(
                 children: [
                   Text(
-                    "Name :- ",
+                    "Country Status      :-    ",
                     style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                        color: Colors.black54
                     ),
                   ),
                   Text(
-                    "${homeScreenProviderfalse!.CountryList[0].n1!.official}",
+                    "${homeScreenProviderfalse!.CountryList[index].status}",
                     style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      color: Colors.black
                     ),
                   ),
                 ],
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 80,top: 5),
+              padding: EdgeInsets.only(left: 20,top: 5),
               child: Row(
                 children: [
                   Text(
-                    "independent :- ",
+                    "Continenes            :-    ",
                     style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                        color: Colors.black54
                     ),
                   ),
                   Text(
-                    "${homeScreenProviderfalse!.CountryList[0].independent}",
+                    "${homeScreenProviderfalse!.CountryList[index].region}",
                     style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      color: Colors.black
                     ),
                   ),
                 ],
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(left: 80,top: 5),
+              padding: EdgeInsets.only(left: 20,top: 5),
               child: Row(
                 children: [
                   Text(
-                    "independent :- ",
+                    "Independent          :-    ",
                     style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                        color: Colors.black54
                     ),
                   ),
                   Text(
-                    "${homeScreenProviderfalse!.CountryList[0].area}",
+                    "${homeScreenProviderfalse!.CountryList[index].independent}",
                     style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
+                      fontSize: 25,
+                      color: Colors.black
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 20,top: 5),
+              child: Row(
+                children: [
+                  Text(
+                    "Population             :-    ",
+                    style: TextStyle(
+                      fontSize: 25,
+                        color: Colors.black54
+                    ),
+                  ),
+                  Text(
+                    "${homeScreenProviderfalse!.CountryList[index].population}",
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.black
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(left: 20,top: 5),
+              child: Row(
+                children: [
+                  Text(
+                    "Timezones             :-    ",
+                    style: TextStyle(
+                      fontSize: 25,
+                        color: Colors.black54
+                    ),
+                  ),
+                  Text(
+                    "${homeScreenProviderfalse!.CountryList[index].timezones[0]}",
+                    style: TextStyle(
+                      fontSize: 25,
+                      color: Colors.black
                     ),
                   ),
                 ],
